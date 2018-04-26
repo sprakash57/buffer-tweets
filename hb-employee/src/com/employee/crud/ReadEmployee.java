@@ -1,6 +1,6 @@
 package com.employee.crud;
 
-import java.util.Date;
+import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -8,7 +8,7 @@ import org.hibernate.cfg.Configuration;
 
 import com.employee.entity.Employee;
 
-public class CreateEmployee {
+public class ReadEmployee {
 
 	public static void main(String[] args) {
 		
@@ -20,21 +20,20 @@ public class CreateEmployee {
 		Session session = factory.getCurrentSession();
 		try {
 			
-			String dobStr = "20/02/1993";
-			Date theDob = DateUtils.parseDate(dobStr);
-			
-			Employee emp = new Employee("Sunny","Kumar","TCS",theDob);
 			session.beginTransaction();
-			session.save(emp);
-			session.getTransaction().commit();
+			List<Employee> theEmployee = session.createQuery("from Employee").getResultList();
 			
+			for(Employee temp:theEmployee) {
+				System.out.println(temp);
+			}
+			
+			session.getTransaction().commit();
 			
 		}catch(Exception e) {
 			e.printStackTrace();
-		}finally {
+		}finally{
 			factory.close();
 		}
-
 	}
 
 }

@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.employee.crud.DateUtils;
+
 @Entity
 @Table(name="employee")
 public class Employee {
@@ -26,6 +28,10 @@ public class Employee {
 	@Column(name="date_of_birth")
 	private Date dateOfBirth;
 
+	
+	public Employee() {
+		
+	}
 	public Employee(String firstName,String lastName,String company,Date dateOfBirth) {
 		
 		this.firstName = firstName;
@@ -83,7 +89,7 @@ public class Employee {
 	
 	public String toString() {
 		
-		return "[id = "+id+"firstName = "+firstName+"lastName = "+lastName+"company = "+company+"DOB = "+dateOfBirth+"]";
+		return "[id = "+id+" firstName = "+firstName+" lastName = "+lastName+" company = "+company+" DOB = "+DateUtils.formatDate(dateOfBirth)+"]";
 	}
 	
 }
