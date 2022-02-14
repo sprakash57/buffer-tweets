@@ -1,5 +1,5 @@
-<h1>Registration</h1>
-<%= form_with model: @user, url: registration_path do |form| %>
+<h1>Change Password</h1>
+<%= form_with model: Current.user, url: edit_password_path do |form| %>
   <% if form.object.errors.any? %>
     <div class="alert alert-danger">
       <% form.object.errors.full_messages.each do |message| %>
@@ -20,6 +20,6 @@
     <%= form.password_field :password_confirmation, class: "form-control" %>
   </div>
   <div class="mb-3">
-    <%= form.submit "Sign up", data: { turbo: false }, class: "btn btn-primary" %>
+    <%= form.submit "Change Password", data: { turbo: false }, class: "btn btn-primary" %>
   </div>
 <% end %>
