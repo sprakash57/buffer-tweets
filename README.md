@@ -1,24 +1,20 @@
-# README
+## Walkthrough
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Ruby on rails application developed on pltform WSL2 and it demonstrates below feature -
 
-Things you may want to cover:
+* User login
+* User registration
+* Data persistance
+* Forgot password
+* Update password with reset link
 
-* Ruby version
+## Technology stack
 
-* System dependencies
+* Ruby 3.0.3
+* Rails 7.0.2
+* Bootstrap 5
+* Sqlite 3
 
-* Configuration
+## WSL2 setup
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+If you want to setup `ruby on rails` on WSL2 then follow along this <a href="https://gorails.com/setup/windows/10" rel="noopener noreferrer">goRails blog.</a>
